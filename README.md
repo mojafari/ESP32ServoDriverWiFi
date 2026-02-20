@@ -134,5 +134,5 @@ driver.process_queue()
 - **ESP32 Servo Driver Expansion Board (Waveshare)** — https://www.waveshare.com/product/servo-driver-with-esp32.htm  
 - **ST3215 Series Smart Servo (Waveshare)** — https://www/waveshare.com/product/st3215-servo.htm  
 - **ESP32 HTTP API (Unofficial)** — `/cmd`, `/readSTS`, `/readID` endpoints provided by the onboard firmware.  
-- **ESP‑NOW (ESP32 Peer‑to‑Peer Protocol)** — https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api/protocols/esp_now.html  
+- **ESP‑NOW (ESP32 Peer‑to‑Peer Protocol)** — https://docs.espressif.com/projects/esp-idf/en/v5.5.3/esp32/api-reference/network/esp_now.html  
 - **ESP32 WiFi / Web Server (Arduino framework)** — official docs for networking and web servers.
