@@ -52,6 +52,7 @@ info = servo.read_servo_info()
 print(info)
 ```
 
+---
 
 ### 2. Sequential Multi-Servo Example
 
@@ -69,6 +70,8 @@ for servo_id in [1, 2, 3, 4]:
         print(f"Servo {servo_id} status:", servo.read_servo_info())
 ```
 
+---
+
 ### 3. Matrix Control (Column → Row)
 
 ```python
@@ -83,6 +86,8 @@ driver.activate_row(2)
 driver.activate_column(3)
 driver.activate_row(1)
 ```
+
+---
 
 ### 4. Matrix Queue Control (Multiple Pieces)
 
@@ -101,4 +106,29 @@ driver.enqueue_piece(2, 3)
 driver.process_queue()
 ```
 
-### 4. Matrix Queue Control (Multiple Pieces)
+---
+
+## 🔧 Notes / Tips
+
+- The ESP32 may occasionally **close connections** during rapid sequences. Drivers implement retry logic to handle this.  
+- Use `delay` in matrix drivers to avoid disconnects (`0.3–0.5s` recommended).  
+- Column and row servos should **not move simultaneously** on the same ESP32 instance; use sequential activation for reliability.  
+- To debug: monitor ESP32 **serial output** or **WiFi connection** for errors.  
+- `activate_column()` and `activate_row()` are identical in behavior but used for readability in matrix projects.  
+
+---
+
+## 🧰 Recommended Workflow for Students
+
+1. Test **single servo** using `test_driver.py`  
+2. Test **all 4 servos sequentially** with `test_4_servos.py`  
+3. Experiment with **parallel moves** using `test_4_servos_parallel.py` (round-robin style)  
+4. Implement **matrix sorting** using `test_matrix.py`  
+5. Process **multiple queued pieces safely** using `test_matrix_queue.py`  
+
+---
+
+## 📖 References
+
+- MY-Series ESP32 servo firmware documentation  
+- ESP32 WiFi control and HTTP/REST commands
