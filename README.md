@@ -128,7 +128,11 @@ driver.process_queue()
 
 ---
 
-## 📖 References
 
-- MY-Series ESP32 servo firmware documentation  
-- ESP32 WiFi control and HTTP/REST commands
+### 📖 References
+
+- **ESP32 Servo Driver Expansion Board (Waveshare)** — https://www.waveshare.com/product/servo-driver-with-esp32.htm  
+- **ST3215 Series Smart Servo (Waveshare)** — https://www/waveshare.com/product/st3215-servo.htm  
+- **ESP32 HTTP API (Unofficial)** — `/cmd`, `/readSTS`, `/readID` endpoints provided by the onboard firmware.  
+- **ESP‑NOW (ESP32 Peer‑to‑Peer Protocol)** — https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api/protocols/esp_now.html  
+- **ESP32 WiFi / Web Server (Arduino framework)** — official docs for networking and web servers.
