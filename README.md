@@ -50,3 +50,55 @@ servo.position_plus()
 servo.position_minus()
 info = servo.read_servo_info()
 print(info)
+```
+
+
+### 2. Sequential Multi-Servo Example
+
+```python
+from esp32_servo_driver import ESP32ServoDriver
+import time
+
+servo = ESP32ServoDriver("192.168.4.1")
+
+for servo_id in [1, 2, 3, 4]:
+    if servo.select_id(servo_id):
+        servo.middle()
+        servo.position_plus()
+        servo.position_minus()
+        print(f"Servo {servo_id} status:", servo.read_servo_info())
+```
+
+### 3. Matrix Control (Column → Row)
+
+```python
+from esp32_servo_driver_matrix import MatrixServoDriver
+
+driver = MatrixServoDriver("192.168.4.1")
+
+# Activate a column servo then a row servo
+driver.activate_column(1)
+driver.activate_row(2)
+
+driver.activate_column(3)
+driver.activate_row(1)
+```
+
+### 4. Matrix Queue Control (Multiple Pieces)
+
+```python
+from esp32_servo_driver_matrix_queue import MatrixServoDriver
+
+driver = MatrixServoDriver("192.168.4.1")
+
+# Queue pieces: (column_servo_id, row_servo_id)
+driver.enqueue_piece(1, 2)
+driver.enqueue_piece(3, 1)
+driver.enqueue_piece(4, 2)
+driver.enqueue_piece(2, 3)
+
+# Execute queued moves sequentially
+driver.process_queue()
+```
+
+### 4. Matrix Queue Control (Multiple Pieces)
