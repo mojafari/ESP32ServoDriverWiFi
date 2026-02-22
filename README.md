@@ -1,6 +1,6 @@
 # ESP32 Servo Driver & Matrix Control
 
-This repository contains Python drivers and example scripts to control **MY-series ESP32 servo drivers** over WiFi. It supports single servo control, multi-servo sequences, and matrix-style control for projects such as conveyor sorting or robotics grids.  
+This repository contains Python drivers and example scripts to control **ST3215 Series Smart Servo (Waveshare)** using **ESP32 Servo Driver Expansion Board (Waveshare)** over WiFi. It supports single servo control, multi-servo sequences, and matrix-style control for projects such as conveyor sorting or robotics grids.  
 
 ---
 
